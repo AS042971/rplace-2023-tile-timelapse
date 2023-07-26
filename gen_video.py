@@ -11,7 +11,7 @@ def clipImage(index: int, id: str, url: str, left: int, upper: int, right: int, 
     response = requests.get(url)
     image = Image.open(BytesIO(response.content))
     cropped = image.crop((left, upper, right, lower))
-    cropped.save(f'{index:05}/{id}.png')
+    cropped.save(f'{out}/{index:05}.png')
 
 def genVideo(frame: str, left: int, upper: int, right: int, lower: int, out: str):
     csv_path = f'./data/{frame}.csv'
