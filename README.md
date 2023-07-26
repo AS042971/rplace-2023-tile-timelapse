@@ -13,10 +13,10 @@ This application generates the HD Timelapse video for Reddit r/place 2023.
 
 ## Video generation
 
-To generate a video, you should first install `ffmpeg` and add it into `PATH`.
+To generate a video, you should first install [FFmpeg](https://github.com/FFmpeg/FFmpeg) and add it to `PATH`.
 
-The basic command is `ffmpeg -framerate 60 -i ./build/%05d.png output.mp4`, which will generate a timelapse video at 3600 timescale (1 second for 1 hour).
+The basic command is `ffmpeg -framerate 60 -i ./build/%05d.png -c:v libxvid output.mp4`, which will generate a timelapse video at 3600 timescales (1 second for 1 hour).
 You can change the timescale by modifying `framerate`
 
 To upscale the video, pass `-vf scale=iw*2:ih*2:flags=neighbor` to the command, where `2` is the scale ratio.
-For instance, `ffmpeg -framerate 60 -i ./build/%05d.png -vf scale=iw*10:ih*10:flags=neighbor output.mp4` generates a 1300x1200 Genshin Impact video
+For instance, `ffmpeg -framerate 60 -i ./build/%05d.png -vf scale=iw*10:ih*10:flags=neighbor -c:v libxvid output.mp4` generates a 1300x1200 Genshin Impact video
