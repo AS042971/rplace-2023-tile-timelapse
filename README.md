@@ -20,3 +20,7 @@ You can change the timescale by modifying `framerate`
 
 To upscale the video, pass `-vf scale=iw*2:ih*2:flags=neighbor` to the command, where `2` is the scale ratio.
 For instance, `ffmpeg -framerate 60 -i ./output/%05d.png -vf scale=iw*10:ih*10:flags=neighbor -c:v libx264 -pix_fmt yuv420p output.mp4` generates a 1300x1200 Genshin Impact video
+
+## Example
+
+https://www.reddit.com/r/Genshin_Impact/comments/159xt5t/an_hd_timelapse_for_genshin_impact_in_rplace_2023/
