@@ -24,3 +24,8 @@ For instance, `ffmpeg -framerate 60 -i ./output/%05d.png -vf scale=iw*10:ih*10:f
 ## Example
 
 https://www.reddit.com/r/Genshin_Impact/comments/159xt5t/an_hd_timelapse_for_genshin_impact_in_rplace_2023/
+
+## Use different time margin
+
+The database is sampled every minute. If you want to generate video with finer scale, you can re-query the image urls from reddit.com.
+The query method and sample code can be seen [here](https://github.com/AS042971/rplace-2023-tile-timelapse/issues/1#issuecomment-1656358900)
