@@ -21,7 +21,8 @@ def genVideo(frame: str, left: int, upper: int, right: int, lower: int, out: str
         spamreader = csv.reader(csvfile, delimiter=',', quotechar='|')
         with alive_bar(row_count) as bar:
             for index, row in enumerate(spamreader):
-                clipImage(index, row[0], 'https://garlic-bread.reddit.com/media/canvas-images/full-frame/' + row[1], left, upper, right, lower, out)
+                if not os.path.exists(f'{out}/{index:05}.png'):
+                    clipImage(index, row[0], 'https://garlic-bread.reddit.com/media/canvas-images/full-frame/' + row[1], left, upper, right, lower, out)
                 bar()
 
 def main():
