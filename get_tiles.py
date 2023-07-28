@@ -1,6 +1,7 @@
 import argparse
 import csv
 from io import BytesIO
+import os
 
 import requests
 from PIL import Image
